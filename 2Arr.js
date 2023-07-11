@@ -26,5 +26,37 @@ db.action();
 auction(db.mypet,1)
   
 
+const navi ={
+    db:[
+    {title : "제품소개" ,
+    cls: "col-3 text-white",
+    herf : "./product.html",
+    img : ["/scr/p.jpg","/src/pover.jpg"]}
+    ,
+    {title : "이게뭐게" ,
+     cls: "col-3 text-info",
+     herf : "./product.html",
+     img : ["/scr/p.jpg","/src/pover.jpg"]
+    } ,
+] ,
+html : function(){
+    this.db.map((v ,x)=>{
+        console.log(`<li class="${v.cls}">
+            <a  herf ="${v.herf}">
+                <img src="${v.img[0]}" onMouseEnter="${v.img[1]}" alt="${v.title}">
+            </a>
+        </li>`)
+        
+    })
+
+}
+}
+// navi.html()
+
+
+//제품소개 쇼륨으로 변경
+console.log()
+navi.db[1].title="쇼륨";
+navi.html()
 
 
